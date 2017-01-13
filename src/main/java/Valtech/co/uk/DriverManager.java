@@ -32,7 +32,7 @@ static LoadPrperties loadprops = new LoadPrperties();
             System.setProperty("webdriver.ie.driver", "src\\test\\Resources\\BrowserDriver\\IEDriverServer.exe");
             driver=new InternetExplorerDriver();
         }
-        else {
+        else if((browser.equalsIgnoreCase("firefox"))){
             driver = new FirefoxDriver();}
 
         driver.get("https://www.valtech.co.uk/");
