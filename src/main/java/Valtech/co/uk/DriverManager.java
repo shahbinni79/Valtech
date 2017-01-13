@@ -35,7 +35,7 @@ static LoadPrperties loadprops = new LoadPrperties();
         else {
             driver = new FirefoxDriver();}
 
-        driver.get("https://www.valtech.co.uk/contact/bangalore/");
+        driver.get("https://www.valtech.co.uk/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
