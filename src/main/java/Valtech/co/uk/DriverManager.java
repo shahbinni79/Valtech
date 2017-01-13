@@ -18,14 +18,16 @@ public class DriverManager {
 
     protected static WebDriver driver ;
     public DriverManager (){PageFactory.initElements(driver,this);}
-
+static LoadPrperties loadprops = new LoadPrperties();
     public static void browseropening(){
-        String browser="InternetExplorer";
+
+       // String browser=loadprops.getProperty("browser");
+        String browser = System.getProperty("browser");
         if (browser.equalsIgnoreCase("Chrome")){
             System.setProperty("webdriver.chrome.driver","src\\test\\Resources\\BrowserDriver\\chromedriver.exe");
             driver=new ChromeDriver();
         }
-        else if((browser.equalsIgnoreCase("InternetExplorer"))){
+        else if((browser.equalsIgnoreCase("ie"))){
 
             System.setProperty("webdriver.ie.driver", "src\\test\\Resources\\BrowserDriver\\IEDriverServer.exe");
             driver=new InternetExplorerDriver();
@@ -34,13 +36,13 @@ public class DriverManager {
             driver = new FirefoxDriver();}
 
         driver.get("https://www.valtech.co.uk/contact/bangalore/");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
-//    public static void browserclosing(){
-//        driver.quit();
-//    }
+    public static void browserclosing(){
+        driver.quit();
+    }
 }
 
 

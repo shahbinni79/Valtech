@@ -19,9 +19,9 @@ public static void open(){
     }
 
     @AfterTest
-//    public static void close(){
-//        DriverManager.browserclosing();
-//    }
+    public static void close(){
+        DriverManager.browserclosing();
+    }
 
     @Test
     public static void getCities(){
